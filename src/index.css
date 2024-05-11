@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.high {
+  border-left: 6px solid rgb(227, 83, 83);
+  background-color: rgba(227, 83, 83, 0.1);
+}
+
+.medium {
+  border-left: 6px solid rgba(237, 188, 11, 0.94);
+  background-color: rgba(237, 188, 11, 0.1);
+}
+
+.low {
+  border-left: 6px solid rgb(16, 243, 182);
+  background-color: rgba(16, 243, 182, 0.1);
+}
+
+input[type="text"] {
+  all: unset;
+}
+
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.option {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.option.low {
+  background-color: rgba(39, 83, 243, 0.879);
+}
+
+.option.medium {
+  background-color: rgba(237, 188, 11, 0.94);
+}
+
+.option.high {
+  background-color: rgb(227, 83, 83);
+}
