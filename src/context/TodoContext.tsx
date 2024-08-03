@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import  {Todo} from "../types/todo";
 import { dummyData } from "../data/todos";
 
@@ -27,7 +27,9 @@ export const useTodoContext = () => {
   }
   return context;
 };
-export const TodoProvider: React.FC = ({ children }) => { 
+export const TodoProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [todos, setTodos] = useState(() => {
     const savedTodos: Todo[] = JSON.parse(
       localStorage.getItem("todos") || "[]"
@@ -65,15 +67,6 @@ export const TodoProvider: React.FC = ({ children }) => {
     setTodos((prevTodos) => prevTodos.filter((todo) => !todo.completed));
   };
 
-  // const value: TodoContextProps = {
-  //   todos,
-  //   onAddTodo,
-  //   setTodoCompleted,
-  //   onDeleteTodo,
-  //   deleteAllCompleted,
-  // };
-
-  // return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
   return (
     <TodoContext.Provider
       value={{
