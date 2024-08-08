@@ -5,7 +5,7 @@ export default {
     extend: {
       fontFamily: {
         varela: ["Varela Round", "sans-serif"],
-        poetsen: ["Poetsen One", "sans-serif"]
+        poetsen: ["Rubik", "sans-serif"]
       },
     },
   },
